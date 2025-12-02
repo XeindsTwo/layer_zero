@@ -1,0 +1,67 @@
+.main {
+  &__explore, &__top, &__left {
+    font-family: $robotoMono;
+  }
+
+  &__explore {
+    @include flex-align-center(5);
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $gray200;
+    margin-left: auto;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+  }
+
+  &__top {
+    @include flex-align-center(30);
+    margin-bottom: 32px;
+    padding-top: 12px;
+    border-top: 1px solid #272727;
+  }
+
+  &__right {
+    max-width: 910px;
+    width: 100%;
+    margin-left: auto;
+    text-align: left;
+    display: flex;
+    text-transform: uppercase;
+    color: $gray200;
+  }
+
+  &__left {
+    color: $gray;
+
+    span {
+      color: $gray200;
+    }
+  }
+
+  &__bottom {
+    @include flex-column(362);
+    max-width: 910px;
+    margin-left: auto;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: -0.72px;
+    line-height: 1.15;
+    color: $gray;
+
+    span {
+      color: $white200;
+    }
+  }
+
+  &__links {
+    @include flex-align-center(8);
+  }
+
+  &__link {
+    min-width: 226px;
+  }
+}

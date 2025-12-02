@@ -1,58 +1,57 @@
 .header {
-  margin-top: 35px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  @media (max-width: 1200px) {
-    margin-top: 25px;
-  }
+  padding: 35px 0;
 
   &__inner {
     @include flex-between-center-gap(30);
-  }
-
-  &__img {
-    @media (max-width: 1300px) {
-      width: auto;
-      height: 38px;
-    }
-    @media (max-width: 1100px) {
-      height: 35px;
-    }
-    @media (max-width: 992px) {
-      height: 32px;
-    }
+    font-family: $robotoMono;
   }
 
   &__list {
-    @include flex-align-center(25);
+    @include flex-align-center(20);
+
+    li {
+      &:not(:last-child) {
+        padding-right: 20px;
+        border-right: 1px solid #272727;
+      }
+    }
   }
 
   &__link {
-    @include flex-center;
+    @include flex-align-center(0);
+    text-transform: uppercase;
+    font-size: 13px;
     border: 1px solid transparent;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    transition: border .4s, background-color .4s;
+    outline: 1px solid transparent;
+    outline-offset: 2px;
+    border-radius: 1px;
+    transition: color .4s, border .4s, outline .4s;
 
     &:hover {
-      svg {
-        opacity: .65;
-      }
+      color: rgba($white, .7);
     }
 
     &:focus {
-      border-color: $accent;
+      outline-color: $accent;
+      color: $white;
+    }
+  }
 
-      svg {
-        opacity: 1;
+  &__assis {
+    @include flex-align-center(7);
+    text-transform: uppercase;
+    outline: 1px solid transparent;
+    outline-offset: 3px;
+    border-radius: 1px;
+    transition: opacity .4s, outline .4s;
 
-        path {
-          fill: white;
-        }
-      }
+    &:hover {
+      opacity: .8;
+    }
+
+    &:focus {
+      outline-color: $accent;
+      color: $white;
     }
   }
 }

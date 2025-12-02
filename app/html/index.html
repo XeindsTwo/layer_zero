@@ -4,92 +4,117 @@
 @include('components/_header.html')
 <main>
   <section class="home">
-    <div class="home__inner container">
-      <button class="home__btn btn" type="button" id="home-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <path d="M5 35V5H35V35H5ZM31.6667 8.33333H8.33333V31.6667H31.6667V8.33333ZM11.6667 21.6667V18.3333H21.6667V15H25V18.3333H28.3333V21.6667H25V25H21.6667V21.6667H11.6667ZM18.3333 25H21.6667V28.3333H18.3333V25ZM18.3333 11.6667V15H21.6667V11.6667H18.3333Z" fill="black"/>
-        </svg>
-        Enter Room
-      </button>
-      <p class="home__subtext">secure mesh chat</p>
-    </div>
-    <div class="modal" id="modalForm">
-      <div class="modal__inner">
-        <button class="modal__close" id="modalCloseBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <g opacity="0.4">
-              <path d="M21 7L7 21" stroke="#669565" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M7 7L21 21" stroke="#669565" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
-            </g>
-          </svg>
-        </button>
-        <h3 class="modal__title">Enter Room Code</h3>
-        <p class="modal__text">
-          End-to-end encrypted. <br>
-          Enter your case-sensitive access code.
-        </p>
-        <form class="modal__bottom" id="form">
-          <span class="modal__error" id="modalError">Invalid Code</span>
-          <label for="code">
-            <input class="input" id="code" type="number" maxlength="11" placeholder="11-char access code">
-          </label>
-          <button class="modal__btn btn" disabled type="button" id="getClientBtn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <path d="M2.75 19.25V2.75H19.25V19.25H2.75ZM17.4167 4.58333H4.58333V17.4167H17.4167V4.58333ZM6.41667 11.9167V10.0833H11.9167V8.25H13.75V10.0833H15.5833V11.9167H13.75V13.75H11.9167V11.9167H6.41667ZM10.0833 13.75H11.9167V15.5833H10.0833V13.75ZM10.0833 6.41667V8.25H11.9167V6.41667H10.0833Z" fill="black"/>
-            </svg>
-            Get Client
-          </button>
-        </form>
+    <div class="container">
+      <div class="home__inner">
+        <video
+            class="home__video"
+            src="images/layer_desktop.webm"
+            autoplay
+            muted
+            loop
+            playsinline
+            webkit-playsinline
+        >
+        </video>
+        <div class="home__content">
+          <h1 class="home__title">
+            Welcome to the <span>Future</span> of Omnichain
+          </h1>
+          <p class="home__text">
+            $ZRO Token Distribution. <span>Connect your wallet for eligibility check and claim.</span>
+          </p>
+        </div>
       </div>
     </div>
   </section>
-  <section class="mobile" id="mobile-screen">
-    <div class="mobile__inner container">
-      <img class="mobile__logo" src="images/logo.svg" width="185" height="27" alt="logo bitchat*">
-      <p class="mobile__text">
-        This app is not available on mobile. Please switch to desktop to continue.
-      </p>
-      <ul class="mobile__list">
-        <li>
-          <a class="mobile__link" href="https://x.com/jack" target="_blank">
-            <span class="sr-only">Open link on the Twitter (X)</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
-              <g clip-path="url(#clip0_8_6)">
-                <mask id="mask0_8_6" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="31" height="30">
-                  <path d="M0.0145264 0H30.0145V30H0.0145264V0Z" fill="white"/>
+  <section class="main">
+    <div class="container">
+      <span class="main__explore">
+        Scroll to explore
+        <img src="images/icons/arrow_down.svg" alt="">
+      </span>
+      <div class="main__top">
+        <p class="main__left">
+          [ 01 <span>/ 02</span> ]
+        </p>
+        <div class="main__right">Positioning</div>
+      </div>
+      <div class="main__bottom">
+        <h2 class="main__title">
+          <span>LayerZero</span>
+          isn't just a bridge; it's <span>foundational</span> infrastructure. The technology that delivered true
+          freedom:
+          applications seamlessly moving data across chains, and a permissionless future.
+          <span>Those who</span> helped build this
+          future <span>will be rewarded</span>. The time for $ZRO has come.
+        </h2>
+        <ul class="main__links">
+          <li>
+            <a class="main__link btn" href="" target="_blank">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_207_1943" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="16"
+                      height="16">
+                  <path d="M0.313477 0.470703H15.3723V15.5295H0.313477V0.470703Z" fill="white"/>
                 </mask>
-                <g mask="url(#mask0_8_6)">
-                  <path d="M23.6395 1.40601H28.2402L18.1902 12.9217L30.0145 28.5946H20.7574L13.5017 19.091L5.20881 28.5946H0.603812L11.3524 16.2731L0.0145264 1.40815H9.50738L16.056 10.0931L23.6395 1.40601ZM22.0217 25.8346H24.5717L8.11453 4.02243H5.38024L22.0217 25.8346Z" fill="#68CD64"/>
+                <g mask="url(#mask0_207_1943)">
+                  <path
+                      d="M7.09155 11.6209C7.15129 11.6183 7.21096 11.6278 7.26692 11.6489C7.32289 11.67 7.374 11.7022 7.41716 11.7436C7.46033 11.785 7.49465 11.8347 7.51806 11.8897C7.54146 11.9448 7.55346 12.004 7.55333 12.0638C7.55321 12.1236 7.54095 12.1827 7.51731 12.2377C7.49368 12.2926 7.45914 12.3422 7.4158 12.3834C7.37246 12.4246 7.32121 12.4566 7.26516 12.4775C7.2091 12.4983 7.1494 12.5076 7.08966 12.5047C6.97234 12.5044 6.85993 12.4576 6.77715 12.3744C6.69437 12.2913 6.648 12.1787 6.64825 12.0614C6.6485 11.9441 6.69535 11.8316 6.77848 11.7489C6.86161 11.6661 6.97423 11.6197 7.09155 11.62V11.6209ZM14.0083 8.89338C13.8913 8.89338 13.7792 8.84693 13.6965 8.76424C13.6138 8.68154 13.5673 8.56939 13.5673 8.45244C13.5673 8.3355 13.6138 8.22334 13.6965 8.14065C13.7792 8.05796 13.8913 8.0115 14.0083 8.0115C14.1252 8.0115 14.2374 8.05796 14.32 8.14065C14.4027 8.22334 14.4492 8.3355 14.4492 8.45244C14.4492 8.56939 14.4027 8.68154 14.32 8.76424C14.2374 8.84693 14.1252 8.89338 14.0083 8.89338ZM14.0083 7.08821C13.7921 7.08852 13.579 7.14019 13.3867 7.23897C13.1944 7.33775 13.0283 7.4808 12.9021 7.65635C12.7759 7.8319 12.6932 8.03491 12.6609 8.24867C12.6285 8.46243 12.6474 8.68083 12.716 8.88585L8.2106 11.2849C8.08566 11.1033 7.91841 10.9549 7.72328 10.8524C7.52815 10.7499 7.31101 10.6965 7.0906 10.6967C6.57108 10.6967 6.09766 10.995 5.86708 11.46L1.82002 9.32538C1.39178 9.10044 1.07178 8.39644 1.10566 7.7555C1.12355 7.42138 1.23931 7.16162 1.41531 7.06091C1.52731 6.99785 1.66096 7.0035 1.80402 7.07785L1.83037 7.09197C2.90331 7.65668 6.4139 9.50609 6.56166 9.5748C6.78943 9.68021 6.91649 9.7235 7.30519 9.53903L14.5617 5.76491C14.668 5.72538 14.7923 5.6228 14.7923 5.4675C14.7923 5.25291 14.5701 5.16821 14.5692 5.16821C14.156 4.97056 13.5217 4.67409 12.9033 4.38421C11.581 3.76491 10.0817 3.06374 9.42378 2.71832C9.25454 2.62321 9.06354 2.57357 8.8694 2.57423C8.67527 2.57489 8.48461 2.62583 8.31602 2.72209L8.1579 2.80021C5.19508 4.26562 1.2299 6.23079 1.00402 6.36727C0.600252 6.61291 0.349899 7.10327 0.316958 7.71127C0.267076 8.67503 0.75837 9.68115 1.46143 10.0491L5.7419 12.2571C5.77856 12.5063 5.88345 12.7405 6.04497 12.9337C6.20648 13.1269 6.41832 13.2717 6.65703 13.352C6.89574 13.4323 7.152 13.4449 7.39746 13.3886C7.64292 13.3322 7.868 13.209 8.04778 13.0327C8.3019 12.7814 8.44872 12.4397 8.45437 12.0821L13.1697 9.52679C13.4431 9.74172 13.7884 9.84396 14.1348 9.81258C14.4812 9.78119 14.8024 9.61857 15.0328 9.358C15.2632 9.09743 15.3852 8.75864 15.3739 8.41102C15.3626 8.0634 15.2188 7.73326 14.972 7.48821C14.7164 7.23247 14.3698 7.08861 14.0083 7.08821Z"
+                      fill="white"/>
                 </g>
-              </g>
-              <defs>
-                <clipPath id="clip0_8_6">
-                  <rect width="30" height="30" fill="white" transform="translate(0.0145264)"/>
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a class="mobile__link" href="https://github.com/jackjackbits/bitchat" target="_blank">
-            <span class="sr-only">Open link on the GitHub</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
-              <g clip-path="url(#clip0_8_4)">
+              </svg>
+              Documentation
+              <svg class="btn__end" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
                 <path
-                    d="M18.8252 1.00757C16.4624 1.00757 14.1227 1.47296 11.9398 2.37716C9.75684 3.28136 7.77337 4.60668 6.10262 6.27743C2.72839 9.65166 0.832764 14.2281 0.832764 19C0.832764 26.9526 5.99659 33.6998 13.1396 36.0928C14.0392 36.2367 14.3271 35.679 14.3271 35.1932V32.1525C9.34318 33.232 8.28163 29.7415 8.28163 29.7415C7.45398 27.6543 6.28447 27.0966 6.28447 27.0966C4.64716 25.9811 6.41041 26.017 6.41041 26.017C8.20966 26.143 9.16326 27.8703 9.16326 27.8703C10.7286 30.6051 13.3735 29.7954 14.3991 29.3636C14.561 28.1941 15.0288 27.4025 15.5326 26.9526C11.5383 26.5028 7.34602 24.9555 7.34602 18.1004C7.34602 16.1032 8.02973 14.5019 9.19924 13.2244C9.01932 12.7746 8.38958 10.9034 9.37916 8.47442C9.37916 8.47442 10.8905 7.98863 14.3271 10.3097C15.7485 9.91382 17.2958 9.7159 18.8252 9.7159C20.3545 9.7159 21.9019 9.91382 23.3233 10.3097C26.7598 7.98863 28.2712 8.47442 28.2712 8.47442C29.2608 10.9034 28.6311 12.7746 28.4511 13.2244C29.6206 14.5019 30.3044 16.1032 30.3044 18.1004C30.3044 24.9735 26.0941 26.4848 22.0818 26.9346C22.7295 27.4924 23.3233 28.59 23.3233 30.2632V35.1932C23.3233 35.679 23.6112 36.2547 24.5288 36.0928C31.6718 33.6818 36.8176 26.9526 36.8176 19C36.8176 16.6372 36.3522 14.2975 35.448 12.1146C34.5438 9.93165 33.2185 7.94818 31.5478 6.27743C29.877 4.60668 27.8935 3.28136 25.7106 2.37716C23.5276 1.47296 21.188 1.00757 18.8252 1.00757Z"
-                    fill="#68CD64"/>
-              </g>
-              <defs>
-                <clipPath id="clip0_8_4">
-                  <rect width="38" height="38" fill="white" transform="translate(0.832764)"/>
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-        </li>
-      </ul>
+                    d="M10.7698 9.03061V1.38477H3.13316V2.714H8.5147L1.53809 9.68323L2.47132 10.6155L9.44609 3.6463V9.03061H10.7698Z"
+                    fill="white"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="main__link btn" href="" target="_blank">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_207_1956" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="16"
+                      height="16">
+                  <path d="M0.62793 0.470703H15.6868V15.5295H0.62793V0.470703Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask0_207_1956)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.13475 0.470703C3.98416 0.470703 0.62793 3.922 0.62793 8.19117C0.62793 11.6039 2.77758 14.4923 5.76111 15.5154C6.13381 15.5916 6.26934 15.3488 6.26934 15.1446C6.26934 14.9658 6.25805 14.3521 6.25805 13.7131C4.16958 14.1733 3.73569 12.7926 3.73569 12.7926C3.39875 11.8985 2.90181 11.6679 2.90181 11.6679C2.21852 11.1945 2.95169 11.1945 2.95169 11.1945C3.71028 11.2462 4.10746 11.9869 4.10746 11.9869C4.77852 13.1634 5.85993 12.8312 6.29475 12.6269C6.35687 12.1281 6.5564 11.7827 6.76722 11.5916C5.10134 11.4128 3.34981 10.7474 3.34981 7.78176C3.34981 6.93847 3.64722 6.24764 4.11969 5.71117C4.04534 5.51917 3.78464 4.7267 4.19499 3.666C4.19499 3.666 4.8284 3.46176 6.25805 4.45847C6.86981 4.28906 7.5004 4.20435 8.13475 4.20247C8.76816 4.20247 9.41475 4.29282 10.0115 4.45847C11.4402 3.46082 12.0745 3.666 12.0745 3.666C12.4849 4.7267 12.2232 5.52011 12.1498 5.71117C12.6336 6.24764 12.9197 6.93847 12.9197 7.78176C12.9197 10.7474 11.1672 11.3987 9.48911 11.5907C9.76205 11.8335 9.99922 12.2938 9.99922 13.0222C9.99922 14.0575 9.98605 14.8886 9.98605 15.1446C9.98605 15.3488 10.1235 15.5916 10.4962 15.5154C13.4797 14.4923 15.6293 11.6039 15.6293 8.19117C15.6416 3.922 12.2731 0.470703 8.13475 0.470703Z"
+                        fill="white"/>
+                </g>
+              </svg>
+              GitHub
+              <svg class="btn__end" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M10.7698 9.03061V1.38477H3.13316V2.714H8.5147L1.53809 9.68323L2.47132 10.6155L9.44609 3.6463V9.03061H10.7698Z"
+                    fill="white"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="main__link btn" href="" target="_blank">
+              <svg class="btn__path" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M13.5383 4.71566L14.1537 4.10027V11.0775H9.846V13.9975L6.926 11.0775H0.615234V1.23135H10.9309L10.3155 1.84673H1.23062V10.4621H7.18016L9.23062 12.512V10.4621H13.5383V4.71566ZM14.558 1.52058C14.6163 1.57469 14.6631 1.63994 14.6956 1.71248C14.7282 1.78501 14.7458 1.86334 14.7476 1.94283C14.7493 2.02232 14.735 2.10134 14.7056 2.17521C14.6762 2.24909 14.6323 2.31631 14.5765 2.37289L8.838 8.11073L6.31677 9.19073C6.27485 9.20867 6.22851 9.21363 6.18374 9.20499C6.13896 9.19635 6.0978 9.1745 6.06556 9.14226C6.03331 9.11001 6.01146 9.06885 6.00282 9.02408C5.99418 8.9793 5.99915 8.93297 6.01708 8.89104L7.09708 6.36981L12.8263 0.641195C12.9394 0.528271 13.0927 0.464844 13.2525 0.464844C13.4123 0.464844 13.5655 0.528271 13.6786 0.641195L14.558 1.52058ZM8.34262 7.65289L7.55493 6.8652L6.96354 8.24366L8.34262 7.65289ZM12.7998 3.2775L11.9297 2.40796L7.94877 6.3895L8.81893 7.25904L12.7998 3.2775ZM13.9475 1.77289L13.4528 1.2572C13.429 1.23239 13.4004 1.21259 13.3689 1.19895C13.3373 1.18531 13.3033 1.17811 13.2689 1.17777C13.2345 1.17742 13.2004 1.18394 13.1686 1.19695C13.1368 1.20995 13.1079 1.22918 13.0835 1.2535L12.3648 1.97227L13.2349 2.84304L13.9439 2.13412C13.9915 2.08632 14.0186 2.02176 14.0193 1.95426C14.02 1.88675 13.9942 1.82165 13.9475 1.77289Z"
+                      stroke="white" stroke-width="0.615385" fill="none"/>
+              </svg>
+              Blog
+              <svg class="btn__end" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M10.7698 9.03061V1.38477H3.13316V2.714H8.5147L1.53809 9.68323L2.47132 10.6155L9.44609 3.6463V9.03061H10.7698Z"
+                    fill="white"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
+  <div class="container">
+    <span class="line"></span>
+  </div>
 </main>
 <script src="js/main.min.js" type="module"></script>
 </body>

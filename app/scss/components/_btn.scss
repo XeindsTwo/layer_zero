@@ -1,23 +1,39 @@
 .btn {
-  @include flex-align-center(15);
-  justify-content: center;
-  padding: 18px 32px;
-  background-color: $accent;
-  font-size: 28px;
+  @include flex-align-center(9);
+  justify-content: flex-start;
+  padding: 13px 17px;
+  background-color: transparent;
+  font-size: 14px;
+  font-family: $robotoMono;
   font-weight: 700;
+  text-transform: uppercase;
   max-width: max-content;
-  border: 1px solid transparent;
-  transition: color .4s, background-color .4s, border .4s, opacity .4s;
-  @media (max-width: 1200px) {
-    font-size: 24px;
-    svg {
-      width: 36px;
-      height: 36px;
-    }
-  }
+  border: 1px solid $white;
+  transition: color .3s, background-color .3s, border .3s, opacity .3s;
 
   &:hover {
-    background-color: rgba($accent, .7);
+    background-color: $white;
+    color: $black;
+
+    svg g path {
+      fill: $black;
+    }
+
+    .btn__path {
+      g path {
+        fill: transparent;
+      }
+
+      path {
+        stroke: $black;
+      }
+    }
+
+    .btn__end {
+      path {
+        fill: $black;
+      }
+    }
   }
 
   &:focus {
@@ -25,24 +41,28 @@
     color: white;
     border-color: $accent;
 
-    svg path {
+    svg g path {
       fill: $accent;
     }
-  }
 
-  &:active {
-    background-color: $accent100;
-    border-color: transparent;
-    color: $black;
+    .btn__path {
+      g path {
+        fill: transparent;
+      }
 
-    svg path {
-      fill: $black;
+      path {
+        stroke: $accent;
+      }
+    }
+
+    .btn__end {
+      path {
+        fill: $accent;
+      }
     }
   }
 
-  &:disabled {
-    pointer-events: none;
-    user-select: none;
-    opacity: .2;
+  &__end {
+    margin-left: auto;
   }
 }
