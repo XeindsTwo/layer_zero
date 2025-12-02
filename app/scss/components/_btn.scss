@@ -1,4 +1,7 @@
 .btn {
+  position: relative;
+  overflow: hidden; // чтобы фон не вылезал наружу
+
   @include flex-align-center(9);
   justify-content: flex-start;
   padding: 13px 17px;
@@ -9,11 +12,29 @@
   text-transform: uppercase;
   max-width: max-content;
   border: 1px solid $white;
-  transition: color .3s, background-color .3s, border .3s, opacity .3s;
+  z-index: 1; // текст выше фона
+
+  transition: color .3s, border .3s;
+
+  // Псевдоэлемент для выезжающего фона
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;                 // стартовое состояние
+    background-color: $white; // цвет заливки
+    transition: width .35s ease;
+    z-index: -1;              // под текстом
+  }
 
   &:hover {
-    background-color: $white;
     color: $black;
+
+    &::before {
+      width: 100%; // вот оно — плавное расширение
+    }
 
     svg g path {
       fill: $black;
@@ -23,7 +44,6 @@
       g path {
         fill: transparent;
       }
-
       path {
         stroke: $black;
       }
@@ -41,6 +61,10 @@
     color: white;
     border-color: $accent;
 
+    &::before {
+      width: 0;
+    }
+
     svg g path {
       fill: $accent;
     }
@@ -49,7 +73,6 @@
       g path {
         fill: transparent;
       }
-
       path {
         stroke: $accent;
       }

@@ -1,0 +1,99 @@
+.menu-btn {
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  padding: 18px 13px;
+  transition: all .4s;
+  background-color: $white;
+  border: 1px solid transparent;
+  @include r($desktop) {
+    display: flex;
+  }
+
+  &:hover {
+    background-color: $accent;
+
+    .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
+      background-color: $black;
+    }
+  }
+
+  &:focus {
+    background-color: transparent;
+    border-color: $accent;
+
+    .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
+      background-color: $white;
+    }
+  }
+
+  &--header {
+    @media (max-width: 992px) {
+      display: flex;
+    }
+    @media (max-width: 560px) {
+      margin-left: auto;
+    }
+  }
+
+  &__line,
+  &__line::after,
+  &__line::before {
+    background-color: $black;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 2px;
+    transition: all .4s;
+  }
+
+  &__line::after,
+  &__line::before {
+    position: absolute;
+  }
+
+  &__line {
+    position: relative;
+    display: flex;
+
+    &::before {
+      margin-top: -6px;
+    }
+
+    &::after {
+      margin-top: 6px;
+    }
+  }
+
+  &.active {
+    background-color: transparent;
+    border-color: $white;
+
+    .menu-btn__line {
+      background: transparent;
+      transition: all .4s;
+      transform: rotate(-90deg);
+
+      &::before {
+        margin-top: 0;
+        transform: rotate(-45deg);
+        transition-delay: .4s;
+        background-color: $white;
+      }
+
+      &::after {
+        margin-top: 0;
+        transform: rotate(45deg);
+        transition-delay: .4s;
+        background-color: $white;
+      }
+    }
+  }
+}

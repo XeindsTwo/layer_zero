@@ -12,6 +12,9 @@
     margin-left: auto;
     justify-content: flex-end;
     margin-bottom: 12px;
+    @media (max-width: 940px) {
+      justify-content: flex-start;
+    }
   }
 
   &__top {
@@ -22,7 +25,6 @@
   }
 
   &__right {
-    max-width: 910px;
     width: 100%;
     margin-left: auto;
     text-align: left;
@@ -43,6 +45,31 @@
     @include flex-column(362);
     max-width: 910px;
     margin-left: auto;
+    @media (max-width: 1300px) {
+      gap: 280px;
+    }
+    @include r($desktop) {
+      gap: 220px;
+    }
+    @include r($lg) {
+      gap: 170px;
+    }
+    @include r($sm) {
+      gap: 130px;
+    }
+  }
+
+  &__right, &__bottom {
+    max-width: 910px;
+    @media (max-width: 1300px) {
+      max-width: 810px;
+    }
+    @media (max-width: 1100px) {
+      max-width: 720px;
+    }
+    @media (max-width: 940px) {
+      max-width: max-content;
+    }
   }
 
   &__title {
@@ -51,6 +78,23 @@
     letter-spacing: -0.72px;
     line-height: 1.15;
     color: $gray;
+    @media (max-width: 1300px) {
+      font-size: 32px;
+    }
+    @include r($desktop) {
+      font-size: 30px;
+      line-height: 1.2;
+    }
+    @media (max-width: 940px) {
+      font-size: 26px;
+    }
+    @include r($sm) {
+      font-size: 24px;
+    }
+    @media (max-width: 525px) {
+      font-size: 22px;
+      line-height: 1.25;
+    }
 
     span {
       color: $white200;
@@ -59,9 +103,21 @@
 
   &__links {
     @include flex-align-center(8);
+    @include r($tablet) {
+      flex-wrap: wrap;
+    }
+    @include r($sm) {
+      @include flex-column(8);
+      li {
+        width: 100%;
+      }
+    }
   }
 
   &__link {
     min-width: 226px;
+    @include r($sm) {
+      min-width: 100%;
+    }
   }
 }
