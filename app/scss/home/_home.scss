@@ -1,0 +1,31 @@
+.home {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  &__btn {
+    margin-top: auto;
+  }
+
+  &__subtext {
+    font-size: 32px;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 35px;
+    @media (max-width: 1200px) {
+      font-size: 30px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 28px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 992px) {
+      font-size: 26px;
+      margin-bottom: 22px;
+    }
+  }
+}

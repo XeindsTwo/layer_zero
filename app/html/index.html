@@ -1,0 +1,95 @@
+@include('components/_head.html')
+
+<body class="body active">
+@include('components/_header.html')
+<main>
+  <section class="home">
+    <div class="home__inner container">
+      <button class="home__btn btn" type="button" id="home-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <path d="M5 35V5H35V35H5ZM31.6667 8.33333H8.33333V31.6667H31.6667V8.33333ZM11.6667 21.6667V18.3333H21.6667V15H25V18.3333H28.3333V21.6667H25V25H21.6667V21.6667H11.6667ZM18.3333 25H21.6667V28.3333H18.3333V25ZM18.3333 11.6667V15H21.6667V11.6667H18.3333Z" fill="black"/>
+        </svg>
+        Enter Room
+      </button>
+      <p class="home__subtext">secure mesh chat</p>
+    </div>
+    <div class="modal" id="modalForm">
+      <div class="modal__inner">
+        <button class="modal__close" id="modalCloseBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <g opacity="0.4">
+              <path d="M21 7L7 21" stroke="#669565" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 7L21 21" stroke="#669565" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </button>
+        <h3 class="modal__title">Enter Room Code</h3>
+        <p class="modal__text">
+          End-to-end encrypted. <br>
+          Enter your case-sensitive access code.
+        </p>
+        <form class="modal__bottom" id="form">
+          <span class="modal__error" id="modalError">Invalid Code</span>
+          <label for="code">
+            <input class="input" id="code" type="number" maxlength="11" placeholder="11-char access code">
+          </label>
+          <button class="modal__btn btn" disabled type="button" id="getClientBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M2.75 19.25V2.75H19.25V19.25H2.75ZM17.4167 4.58333H4.58333V17.4167H17.4167V4.58333ZM6.41667 11.9167V10.0833H11.9167V8.25H13.75V10.0833H15.5833V11.9167H13.75V13.75H11.9167V11.9167H6.41667ZM10.0833 13.75H11.9167V15.5833H10.0833V13.75ZM10.0833 6.41667V8.25H11.9167V6.41667H10.0833Z" fill="black"/>
+            </svg>
+            Get Client
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="mobile" id="mobile-screen">
+    <div class="mobile__inner container">
+      <img class="mobile__logo" src="images/logo.svg" width="185" height="27" alt="logo bitchat*">
+      <p class="mobile__text">
+        This app is not available on mobile. Please switch to desktop to continue.
+      </p>
+      <ul class="mobile__list">
+        <li>
+          <a class="mobile__link" href="https://x.com/jack" target="_blank">
+            <span class="sr-only">Open link on the Twitter (X)</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+              <g clip-path="url(#clip0_8_6)">
+                <mask id="mask0_8_6" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="31" height="30">
+                  <path d="M0.0145264 0H30.0145V30H0.0145264V0Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask0_8_6)">
+                  <path d="M23.6395 1.40601H28.2402L18.1902 12.9217L30.0145 28.5946H20.7574L13.5017 19.091L5.20881 28.5946H0.603812L11.3524 16.2731L0.0145264 1.40815H9.50738L16.056 10.0931L23.6395 1.40601ZM22.0217 25.8346H24.5717L8.11453 4.02243H5.38024L22.0217 25.8346Z" fill="#68CD64"/>
+                </g>
+              </g>
+              <defs>
+                <clipPath id="clip0_8_6">
+                  <rect width="30" height="30" fill="white" transform="translate(0.0145264)"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="mobile__link" href="https://github.com/jackjackbits/bitchat" target="_blank">
+            <span class="sr-only">Open link on the GitHub</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
+              <g clip-path="url(#clip0_8_4)">
+                <path
+                    d="M18.8252 1.00757C16.4624 1.00757 14.1227 1.47296 11.9398 2.37716C9.75684 3.28136 7.77337 4.60668 6.10262 6.27743C2.72839 9.65166 0.832764 14.2281 0.832764 19C0.832764 26.9526 5.99659 33.6998 13.1396 36.0928C14.0392 36.2367 14.3271 35.679 14.3271 35.1932V32.1525C9.34318 33.232 8.28163 29.7415 8.28163 29.7415C7.45398 27.6543 6.28447 27.0966 6.28447 27.0966C4.64716 25.9811 6.41041 26.017 6.41041 26.017C8.20966 26.143 9.16326 27.8703 9.16326 27.8703C10.7286 30.6051 13.3735 29.7954 14.3991 29.3636C14.561 28.1941 15.0288 27.4025 15.5326 26.9526C11.5383 26.5028 7.34602 24.9555 7.34602 18.1004C7.34602 16.1032 8.02973 14.5019 9.19924 13.2244C9.01932 12.7746 8.38958 10.9034 9.37916 8.47442C9.37916 8.47442 10.8905 7.98863 14.3271 10.3097C15.7485 9.91382 17.2958 9.7159 18.8252 9.7159C20.3545 9.7159 21.9019 9.91382 23.3233 10.3097C26.7598 7.98863 28.2712 8.47442 28.2712 8.47442C29.2608 10.9034 28.6311 12.7746 28.4511 13.2244C29.6206 14.5019 30.3044 16.1032 30.3044 18.1004C30.3044 24.9735 26.0941 26.4848 22.0818 26.9346C22.7295 27.4924 23.3233 28.59 23.3233 30.2632V35.1932C23.3233 35.679 23.6112 36.2547 24.5288 36.0928C31.6718 33.6818 36.8176 26.9526 36.8176 19C36.8176 16.6372 36.3522 14.2975 35.448 12.1146C34.5438 9.93165 33.2185 7.94818 31.5478 6.27743C29.877 4.60668 27.8935 3.28136 25.7106 2.37716C23.5276 1.47296 21.188 1.00757 18.8252 1.00757Z"
+                    fill="#68CD64"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_8_4">
+                  <rect width="38" height="38" fill="white" transform="translate(0.832764)"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+<script src="js/main.min.js" type="module"></script>
+</body>

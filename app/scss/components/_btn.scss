@@ -1,0 +1,48 @@
+.btn {
+  @include flex-align-center(15);
+  justify-content: center;
+  padding: 18px 32px;
+  background-color: $accent;
+  font-size: 28px;
+  font-weight: 700;
+  max-width: max-content;
+  border: 1px solid transparent;
+  transition: color .4s, background-color .4s, border .4s, opacity .4s;
+  @media (max-width: 1200px) {
+    font-size: 24px;
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &:hover {
+    background-color: rgba($accent, .7);
+  }
+
+  &:focus {
+    background-color: transparent;
+    color: white;
+    border-color: $accent;
+
+    svg path {
+      fill: $accent;
+    }
+  }
+
+  &:active {
+    background-color: $accent100;
+    border-color: transparent;
+    color: $black;
+
+    svg path {
+      fill: $black;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    user-select: none;
+    opacity: .2;
+  }
+}
